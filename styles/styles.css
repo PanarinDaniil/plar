@@ -702,7 +702,7 @@ body {
 }
 @media screen and (max-width: 740px) {
   .fancybox-nav.fancybox-nav {
-    height: 78%;
+    height: 60%;
   }
 }
 
