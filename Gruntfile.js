@@ -50,14 +50,18 @@ module.exports = function (grunt) {
 		    },
 	    	my_target: {
 				files: [{
-					'js/scripts.min.js': ['js/scripts.js']
+					'js/mousewheel.min.js': ['js/jquery.mousewheel-3.0.6.pack.js'],
+					'js/fancybox.min.js'  : ['js/jquery.fancybox.js'],
+					'js/fancybox-buttons.min.js'  : ['js/jquery.fancybox-buttons.js'],
+					'js/fancybox-media.min.js'  : ['js/jquery.fancybox-media.js'],
+					'js/scripts.min.js'   : ['js/scripts.js']
 				}]
 			}
 	    },
 
 	    concat: {
 	    	dist: {
-	    		src: ['js/jquery-1.11.3.min.js', 'js/jquery.validate.min.js', 'js/jquery.mousewheel-3.0.6.pack.js', 'js/jquery.fancybox.js', 'js/jquery.fancybox-buttons.js', 'js/jquery.fancybox-media.js', 'js/scripts.min.js'],
+	    		src: ['js/jquery-1.11.3.min.js', 'js/jquery.validate.min.js', 'js/mousewheel.min.js', 'js/fancybox.min.js', 'js/fancybox-buttons.min.js', 'js/fancybox-media.min.js', 'js/scripts.min.js'],
 	    		dest: 'Scripts/build.js'
 	    	}
 	    },

@@ -12,9 +12,6 @@ $yellow: #ebbb11;
 $btnText: #fff;
 $btnHover: #6a8bb9;
 
-html {
-}
-
 body {
     margin: 0;
     font: 18px/24px "Museo 500", Arial, sans-serif;
@@ -22,52 +19,33 @@ body {
     background: #fff;
     letter-spacing:0.25px;
 }
-
 *, *:after, *:before {
     @include box-sizing(border-box);
 }
-
-
-nav, header, footer, button, time, article, section, main {
-    display: block;
-}
-
 img {
     border-style: none;
 }
-
 a {
     text-decoration: none;
 }
-
 .animate, a {
     @include transition($transition);
 }
-
 a:focus,
 a:hover {
-    
     text-decoration: none;
 }
-
 a:hover {
     text-decoration: underline;
 }
-
-h1, h2, h3, h4, h5, h6 {
-    color: #221100;
-}
-
 ul {
     padding: 0;
     margin: 0;
     list-style: none;
 }
-
 li {
     color: $grey;
 }
-
 p {
     color:#272b2d;
 }
@@ -160,6 +138,12 @@ p {
 .top-block{
     color:#fff;
     text-align:center;
+}
+.top-block{
+    background:url(#{$imgPath}top-bg.png) no-repeat;
+    background-size:cover;
+    padding:260px 0 43px;
+    margin-top:-66px;
 }
 .top-title{
     text-transform:uppercase;
@@ -352,6 +336,14 @@ p {
     &:before{
         display:inline-block;
         padding-right:10px;
+        content:"\e900";
+        font-family: icomoon;
+        font-style: normal;
+        font-weight: 400;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
     }
 }
 .article-preview{
@@ -594,6 +586,21 @@ p {
     }
     .gallery-padding{
         padding:2px;
+        position:relative;
+        &:before{
+            position:absolute;
+            content:'';
+            left:2px;
+            right:2px;
+            top:2px;
+            bottom:2px;
+            @include transition($transition);
+        }
+        &:hover{
+            &:before{
+                background:rgba(0,0,0,.5);
+            }
+        }
     }
     .s-block-wrapper{
         display: -webkit-box;
@@ -614,9 +621,9 @@ p {
     flex-basis:20%;
 }
 .video-wrapper{
-    position:relative;
-    &:before{
+    &:after{
         position:absolute;
+        content: "\e907";
         font-size:46px;
         color:#f2f2f2;
         top:50%;
@@ -624,17 +631,26 @@ p {
         left:0;
         right:0;
         text-align:center;
+        font-family:'icomoon';
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
         @include transition($transition);
     }
     &:hover{
-        &:before{
-            color:#ff7200;
+        &:after{
+            color:#207cde;
         }
     }
 }
 .m-block-wrapper{
     &.video-wrapper{
-        &:before{
+        &:after{
             font-size:100px;
             margin-top:-50px;
         }
@@ -642,36 +658,9 @@ p {
 }
 .fancybox-nav{
     height:90%;
+    width:20%;
 }
 /*End Gallery*/
-.placeholder::-webkit-input-placeholder{
-  color: #5a5a5a;
-  font:16px/40px "Museo 300", Arial, sans-serif;
-  letter-spacing:0px;
-}
-.placeholder:-moz-placeholder{
-  color: #5a5a5a;
-  opacity: 1;
-  font:16px/40px "Museo 300", Arial, sans-serif;
-  letter-spacing:0px;
-}
-.placeholder::-moz-placeholder{
-  color: #5a5a5a;
-  opacity: 1;
-  font:16px/40px "Museo 300", Arial, sans-serif;
-  letter-spacing:0px;
-}
-.placeholder:-ms-input-placeholder{
-  color: #5a5a5a;
-  font:16px/40px "Museo 300", Arial, sans-serif;
-  letter-spacing:0px;
-}
-.top-block{
-    background:url(#{$imgPath}top-bg.png) no-repeat;
-    background-size:cover;
-    padding:260px 0 43px;
-    margin-top:-66px;
-}
 @media screen and (max-width:1440px){
     .content{
         width:960px;
@@ -704,8 +693,16 @@ p {
     .item-3 {
         min-height:770px;
     }
+    .video-wrapper:after{
+        font-size:30px;
+        margin-top:-15px;
+    }
+    .m-block-wrapper.video-wrapper:after {
+        font-size:70px;
+        margin-top:-35px;
+    }
 }
-@media screen and (max-width:500px){
+@media screen and (max-width:740px){
     .fancybox-nav{
         height:78%;
     }
