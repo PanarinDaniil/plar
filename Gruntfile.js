@@ -70,10 +70,10 @@ module.exports = function (grunt) {
 	    	},
 	    	sass: {
 		    	files: [ 'scss/*.scss' ],
-	    		tasks: [ 'compass', 'compass-clean' ]
+	    		tasks: [ 'compass' ]
 	    	},
 	    	css: {
-		    	files: ['styles/*.css'],
+		    	files: [ 'styles/styles.css', 'styles/jquery.fancybox.css', 'styles/jquery.fancybox-buttons.css' ],
 		    	tasks: ['cssmin']
 	    	}
 	    }
