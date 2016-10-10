@@ -22,8 +22,8 @@
 }
 @font-face {
   font-family: 'icomoon';
-  src: url("../fonts/icomoon.eot?rqwn4d");
-  src: url("../fonts/icomoon.eot?rqwn4d#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?rqwn4d") format("truetype"), url("../fonts/icomoon.woff?rqwn4d") format("woff"), url("../fonts/icomoon.svg?rqwn4d#icomoon") format("svg");
+  src: url("../fonts/icomoon.eot?qjuubj");
+  src: url("../fonts/icomoon.eot?qjuubj#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?qjuubj") format("truetype"), url("../fonts/icomoon.woff?qjuubj") format("woff"), url("../fonts/icomoon.svg?qjuubj#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -41,10 +41,6 @@
 
 .svg-align-left:before {
   content: "\e900";
-}
-
-.svg-user:before {
-  content: "\e906";
 }
 
 .svg-envelope:before {
@@ -65,6 +61,14 @@
 
 .svg-settings:before {
   content: "\e905";
+}
+
+.svg-user:before {
+  content: "\e906";
+}
+
+.svg-play:before {
+  content: "\e907";
 }
 
 body {
@@ -246,10 +250,6 @@ p {
   margin: 0 auto;
 }
 .icon-wrapper li {
-  /*width:200px;
-  margin:0 17px;
-  display:inline-block;
-  vertical-align:top;*/
   flex-grow: 1;
   flex-basis: 25%;
   padding: 0 17px;
@@ -682,7 +682,7 @@ p {
 .gallery .gallery-padding {
   padding: 2px;
 }
-.gallery .m-block-wrapper {
+.gallery .s-block-wrapper {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -691,7 +691,7 @@ p {
   flex-wrap: nowrap;
   justify-content: center;
 }
-.gallery .m-block-wrapper a {
+.gallery .s-block-wrapper a {
   flex-grow: 1;
   flex-basis: 50%;
 }
@@ -699,6 +699,36 @@ p {
 .block-wrapper {
   flex-grow: 1;
   flex-basis: 20%;
+}
+
+.video-wrapper {
+  position: relative;
+}
+.video-wrapper:before {
+  position: absolute;
+  font-size: 46px;
+  color: #f2f2f2;
+  top: 50%;
+  margin-top: -23px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+.video-wrapper:hover:before {
+  color: #ff7200;
+}
+
+.m-block-wrapper.video-wrapper:before {
+  font-size: 100px;
+  margin-top: -50px;
+}
+
+.fancybox-nav {
+  height: 90%;
 }
 
 /*End Gallery*/
@@ -770,5 +800,10 @@ p {
 
   .item-3 {
     min-height: 770px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .fancybox-nav {
+    height: 78%;
   }
 }

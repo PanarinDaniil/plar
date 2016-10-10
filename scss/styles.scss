@@ -3,6 +3,7 @@
 
 $imgPath: "../images/";
 $transition: all 0.2s ease-out;
+
 $grey: #909090;
 $darkGrey: #6f7173;
 $blue: #5094f2;
@@ -181,10 +182,6 @@ p {
     max-width: 940px;
     margin:0 auto;
     li{
-        /*width:200px;
-        margin:0 17px;
-        display:inline-block;
-        vertical-align:top;*/
         flex-grow: 1;
         flex-basis: 25%;
         padding: 0 17px;
@@ -221,7 +218,7 @@ p {
         margin-left:-45px;
         width:90px;
         height:90px;
-        background:url(../images/clock.svg) no-repeat;
+        background:url(#{$imgPath}clock.svg) no-repeat;
     }
 }
 .star{
@@ -231,7 +228,7 @@ p {
         margin-left:-43px;
         width:86px;
         height:86px;
-        background:url(../images/star.svg) no-repeat;
+        background:url(#{$imgPath}star.svg) no-repeat;
     }
 }
 .music{
@@ -241,7 +238,7 @@ p {
         margin-left:-43px;
         width:86px;
         height:86px;
-        background:url(../images/music.svg) no-repeat;
+        background:url(#{$imgPath}music.svg) no-repeat;
     }
 }
 .house{
@@ -251,7 +248,7 @@ p {
         margin-left:-43px;
         width:86px;
         height:86px;
-        background:url(../images/house.svg) no-repeat;
+        background:url(#{$imgPath}house.svg) no-repeat;
     }
 }
 /*End top block*/
@@ -493,7 +490,7 @@ p {
 /*End list wrapper*/
 /*Footer*/
 .footer{
-    background:url(../images/bottom-bg.png) no-repeat;
+    background:url(#{$imgPath}bottom-bg.png) no-repeat;
     background-size:cover;
     padding:74px 0 139px;
     color:#fff;
@@ -598,7 +595,7 @@ p {
     .gallery-padding{
         padding:2px;
     }
-    .m-block-wrapper{
+    .s-block-wrapper{
         display: -webkit-box;
         display: -moz-box;
         display: -ms-flexbox;
@@ -616,7 +613,36 @@ p {
     flex-grow:1;
     flex-basis:20%;
 }
-
+.video-wrapper{
+    position:relative;
+    &:before{
+        position:absolute;
+        font-size:46px;
+        color:#f2f2f2;
+        top:50%;
+        margin-top:-23px;
+        left:0;
+        right:0;
+        text-align:center;
+        @include transition($transition);
+    }
+    &:hover{
+        &:before{
+            color:#ff7200;
+        }
+    }
+}
+.m-block-wrapper{
+    &.video-wrapper{
+        &:before{
+            font-size:100px;
+            margin-top:-50px;
+        }
+    }
+}
+.fancybox-nav{
+    height:90%;
+}
 /*End Gallery*/
 .placeholder::-webkit-input-placeholder{
   color: #5a5a5a;
@@ -641,7 +667,7 @@ p {
   letter-spacing:0px;
 }
 .top-block{
-    background:url(../images/top-bg.png) no-repeat;
+    background:url(#{$imgPath}top-bg.png) no-repeat;
     background-size:cover;
     padding:260px 0 43px;
     margin-top:-66px;
@@ -677,5 +703,10 @@ p {
     }
     .item-3 {
         min-height:770px;
+    }
+}
+@media screen and (max-width:500px){
+    .fancybox-nav{
+        height:78%;
     }
 }

@@ -57,7 +57,7 @@ module.exports = function (grunt) {
 
 	    concat: {
 	    	dist: {
-	    		src: ['js/jquery-1.11.3.min.js', 'js/jquery.validate.min.js', 'js/scripts.min.js'],
+	    		src: ['js/jquery-1.11.3.min.js', 'js/jquery.validate.min.js', 'js/jquery.mousewheel-3.0.6.pack.js', 'js/jquery.fancybox.js', 'js/jquery.fancybox-buttons.js', 'js/jquery.fancybox-media.js', 'js/scripts.min.js'],
 	    		dest: 'Scripts/build.js'
 	    	}
 	    },
@@ -75,7 +75,7 @@ module.exports = function (grunt) {
 	    cssmin: {
 	    	target: {
 	    		files: {
-	    			'css/style.min.css' : ['styles/slick.css', 'styles/slick-theme.css', 'styles/styles.css']
+	    			'css/style.min.css' : ['styles/jquery.fancybox.css', 'styles/jquery.fancybox-buttons.css', 'jquery.fancybox-thumbs.css', 'styles/styles.css']
 	    		}
 	    	}
 	    },
