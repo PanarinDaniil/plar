@@ -19,29 +19,6 @@ module.exports = function (grunt) {
 			}
 		},
 
-	    jshint: {
-	      options: {
-	        curly: true,
-	        eqeqeq: true,
-	        immed: true,
-	        latedef: true,
-	        newcap: true,
-	        noarg: true,
-	        sub: true,
-	        undef: true,
-	        eqnull: true,
-	        browser: true,
-	        globals: {
-	          jQuery: true,
-	          $: true,
-	          console: true
-	        }
-	      },
-	      '<%= pkg.name %>': {
-	        src: [ 'src/js/*.js' ]
-	      }
-	    },
-
 	    uglify: {
 	    	options: {
 		      compress: {
@@ -50,10 +27,8 @@ module.exports = function (grunt) {
 		    },
 	    	my_target: {
 				files: [{
-					'js/mousewheel.min.js': ['js/jquery.mousewheel-3.0.6.pack.js'],
 					'js/fancybox.min.js'  : ['js/jquery.fancybox.js'],
 					'js/fancybox-buttons.min.js'  : ['js/jquery.fancybox-buttons.js'],
-					'js/fancybox-media.min.js'  : ['js/jquery.fancybox-media.js'],
 					'js/scripts.min.js'   : ['js/scripts.js']
 				}]
 			}
@@ -61,7 +36,7 @@ module.exports = function (grunt) {
 
 	    concat: {
 	    	dist: {
-	    		src: ['js/jquery-1.11.3.min.js', 'js/jquery.validate.min.js', 'js/mousewheel.min.js', 'js/fancybox.min.js', 'js/fancybox-buttons.min.js', 'js/fancybox-media.min.js', 'js/scripts.min.js'],
+	    		src: ['js/jquery-1.11.3.min.js', 'js/jquery.validate.min.js', 'js/fancybox.min.js', 'js/fancybox-buttons.min.js', 'js/scripts.min.js'],
 	    		dest: 'Scripts/build.js'
 	    	}
 	    },
@@ -79,7 +54,7 @@ module.exports = function (grunt) {
 	    cssmin: {
 	    	target: {
 	    		files: {
-	    			'css/style.min.css' : ['styles/jquery.fancybox.css', 'styles/jquery.fancybox-buttons.css', 'jquery.fancybox-thumbs.css', 'styles/styles.css']
+	    			'css/style.min.css' : [ 'styles/styles.css', 'styles/jquery.fancybox.css', 'styles/jquery.fancybox-buttons.css']
 	    		}
 	    	}
 	    },
@@ -90,12 +65,12 @@ module.exports = function (grunt) {
 		    	tasks: ['htmlmin:dev']
 	    	},
 	    	scripts: {
-		    	files: ['js/jquery-1.11.3.min.js', 'js/jquery.validate.min.js', 'js/scripts.js'],
-		    	tasks: ['jshint', 'uglify', 'concat']
+		    	files: ['js/jquery-1.11.3.min.js', 'js/jquery.validate.min.js', 'js/jquery.fancybox.js', 'js/jquery.fancybox-buttons.js', 'js/scripts.js'],
+		    	tasks: [ 'uglify', 'concat']
 	    	},
 	    	sass: {
 		    	files: [ 'scss/*.scss' ],
-	    		tasks: [ 'compass' ]
+	    		tasks: [ 'compass', 'compass-clean' ]
 	    	},
 	    	css: {
 		    	files: ['styles/*.css'],
@@ -105,12 +80,11 @@ module.exports = function (grunt) {
 	});
  
 	grunt.loadNpmTasks('grunt-contrib-htmlmin');
-	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-compass');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-watch');
  
-	grunt.registerTask('default', ['htmlmin:dev', 'jshint', 'uglify', 'concat', 'compass-clean', 'compass', 'cssmin', 'watch']);
+	grunt.registerTask('default', ['htmlmin:dev', 'uglify', 'concat', 'compass-clean', 'compass', 'cssmin', 'watch']);
 };
