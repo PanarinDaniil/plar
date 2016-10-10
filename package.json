@@ -8,10 +8,7 @@
     "grunt-compass": "^0.3.9",
     "grunt-contrib-concat": "latest",
     "grunt-contrib-cssmin": "latest",
-    "grunt-contrib-jshint": "latest",
-    "grunt-contrib-uglify": "latest",
-    "grunt-contrib-watch": "latest",
-    "grunt-remove-logging": "latest"
+    "grunt-contrib-uglify": "latest"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
