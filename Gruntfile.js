@@ -27,24 +27,24 @@ module.exports = function (grunt) {
 		    },
 	    	my_target: {
 				files: [{
-					'js/fancybox.min.js'  : ['js/jquery.fancybox.js'],
-					'js/fancybox-buttons.min.js'  : ['js/jquery.fancybox-buttons.js'],
-					'js/scripts.min.js'   : ['js/scripts.js']
+					'js-dev/fancybox.min.js'  : ['js-dev/jquery.fancybox.js'],
+					'js-dev/fancybox-buttons.min.js'  : ['js-dev/jquery.fancybox-buttons.js'],
+					'js-dev/scripts.min.js'   : ['js-dev/scripts.js']
 				}]
 			}
 	    },
 
 	    concat: {
 	    	dist: {
-	    		src: ['js/jquery-1.11.3.min.js', 'js/jquery.validate.min.js', 'js/fancybox.min.js', 'js/fancybox-buttons.min.js', 'js/scripts.min.js'],
+	    		src: ['js-dev/jquery-1.11.3.min.js', 'js-dev/jquery.validate.min.js', 'js-dev/fancybox.min.js', 'js-dev/fancybox-buttons.min.js', 'js-dev/scripts.min.js'],
 	    		dest: 'Scripts/build.js'
 	    	}
 	    },
  
 	    compass: {
 		    prod: {
-		        src: 'scss',
-		        dest: 'styles',
+		        src: 'scss-dev',
+		        dest: 'styles-dev',
 		        forcecompile: false,
 		        debugsass: false,
 		        linecomments: false
@@ -54,7 +54,7 @@ module.exports = function (grunt) {
 	    cssmin: {
 	    	target: {
 	    		files: {
-	    			'css/style.min.css' : [ 'styles/styles.css', 'styles/jquery.fancybox.css', 'styles/jquery.fancybox-buttons.css']
+	    			'css/style.min.css' : [ 'styles-dev/styles.css', 'styles-dev/jquery.fancybox.css', 'styles-dev/jquery.fancybox-buttons.css']
 	    		}
 	    	}
 	    },
@@ -65,15 +65,15 @@ module.exports = function (grunt) {
 		    	tasks: ['htmlmin:dev']
 	    	},
 	    	scripts: {
-		    	files: ['js/jquery-1.11.3.min.js', 'js/jquery.validate.min.js', 'js/jquery.fancybox.js', 'js/jquery.fancybox-buttons.js', 'js/scripts.js'],
+		    	files: ['js-dev/jquery-1.11.3.min.js', 'js-dev/jquery.validate.min.js', 'js-dev/jquery.fancybox.js', 'js-dev/jquery.fancybox-buttons.js', 'js-dev/scripts.js'],
 		    	tasks: [ 'uglify', 'concat']
 	    	},
 	    	sass: {
-		    	files: [ 'scss/*.scss' ],
+		    	files: [ 'scss-dev/*.scss' ],
 	    		tasks: [ 'compass' ]
 	    	},
 	    	css: {
-		    	files: [ 'styles/styles.css', 'styles/jquery.fancybox.css', 'styles/jquery.fancybox-buttons.css' ],
+		    	files: [ 'styles-dev/styles.css', 'styles-dev/jquery.fancybox.css', 'styles-dev/jquery.fancybox-buttons.css' ],
 		    	tasks: ['cssmin']
 	    	}
 	    }

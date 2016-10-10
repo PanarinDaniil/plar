@@ -197,12 +197,12 @@ body {
   max-width: 1350px;
   margin: 0 auto;
 }
-@media screen and (max-width: 1440px) {
+@media (max-width: 1440px) {
   .content {
     width: 960px;
   }
 }
-@media screen and (max-width: 959px) {
+@media (max-width: 959px) {
   .content {
     width: 740px;
   }
@@ -245,12 +245,12 @@ body {
   width: 33.3%;
   min-height: 650px;
 }
-@media screen and (max-width: 1440px) {
+@media (max-width: 1440px) {
   .item-3 {
     min-height: 665px;
   }
 }
-@media screen and (max-width: 959px) {
+@media (max-width: 959px) {
   .item-3 {
     min-height: 770px;
   }
@@ -359,7 +359,7 @@ body {
   max-width: 100%;
   height: 58px;
 }
-@media screen and (max-width: 959px) {
+@media (max-width: 959px) {
   .logo {
     margin: 0 15px 0 0px;
   }
@@ -374,7 +374,7 @@ body {
   vertical-align: top;
   padding: 0 22px;
 }
-@media screen and (max-width: 959px) {
+@media (max-width: 959px) {
   .header-menu li {
     padding: 0 5px;
   }
@@ -385,7 +385,7 @@ body {
   padding-right: 16px;
   padding-top: 9px;
 }
-@media screen and (max-width: 959px) {
+@media (max-width: 959px) {
   .register-header-wrapper {
     padding-right: 0;
   }
@@ -395,7 +395,7 @@ body {
   vertical-align: top;
   margin: 0 8px;
 }
-@media screen and (max-width: 959px) {
+@media (max-width: 959px) {
   .register-header-wrapper li {
     margin: 0 5px;
   }
@@ -422,7 +422,7 @@ body {
   color: #fff;
   text-align: center;
 }
-@media screen and (max-width: 959px) {
+@media (max-width: 959px) {
   .top-block {
     margin-top: -87px;
   }
@@ -675,7 +675,7 @@ body {
   -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
 }
-@media screen and (max-width: 959px) {
+@media (max-width: 959px) {
   .video-wrapper:after {
     font-size: 30px;
     margin-top: -15px;
@@ -689,7 +689,7 @@ body {
   font-size: 100px;
   margin-top: -50px;
 }
-@media screen and (max-width: 959px) {
+@media (max-width: 959px) {
   .m-block-wrapper.video-wrapper:after {
     font-size: 70px;
     margin-top: -35px;
@@ -700,7 +700,7 @@ body {
   height: 90%;
   width: 20%;
 }
-@media screen and (max-width: 740px) {
+@media (max-width: 740px) {
   .fancybox-nav.fancybox-nav {
     height: 60%;
   }

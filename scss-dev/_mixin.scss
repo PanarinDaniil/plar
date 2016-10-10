@@ -1,12 +1,12 @@
 @mixin bp( $point ) {
   @if $point == l {
-    @media screen and (max-width: 1440px) { @content; }
+    @media (max-width: 1440px) { @content; }
   }
   @else if $point == m {
-    @media screen and (max-width: 959px) { @content; }
+    @media (max-width: 959px) { @content; }
   }
   @else if $point == xs {
-    @media screen and (max-width: 740px)  { @content; }
+    @media (max-width: 740px)  { @content; }
   }
 }
 @function font( $font ) {
